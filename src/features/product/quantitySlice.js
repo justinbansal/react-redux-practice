@@ -9,7 +9,13 @@ export const quantitySlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.cartQuantity += 1;
-      state.cartItems.push(action.payload);
+      const {name, quantity} = action.payload;
+      const existingProduct = state.cartItems.find(product => product.name === name);
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        state.cartItems.push(action.payload);
+      }
     }
   }
 })
