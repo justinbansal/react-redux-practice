@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from 'react-redux';
-import {increment} from './quantitySlice';
+import {addProduct} from './quantitySlice';
 
 function Product({product}) {
   const [quantitySold, updateQuantity] = useState(0);
@@ -13,7 +13,12 @@ function Product({product}) {
       <div>
         <button
           // using useState hook: onClick={() => updateQuantity(quantitySold + 1)}
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(addProduct(
+            {
+              name: product.name,
+              quantity: 1
+            }
+          ))}
         >
           Add to cart
         </button>

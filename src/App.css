@@ -51,6 +51,22 @@ header {
   text-align: left;
 }
 
+.cart-items {
+  height: 100%;
+  position: fixed;
+  width: 300px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: dodgerblue;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.item {
+  margin: 1em;
+}
+
 .products-list {
   text-align: center;
 }

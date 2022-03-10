@@ -5,7 +5,16 @@ import {useSelector} from 'react-redux';
 // Try using Redux to access state
 
 function Header() {
-  const quantity = useSelector(state => state.quantity.value);
+  const quantity = useSelector(state => state.quantity.cartQuantity);
+  const cartItems = useSelector(state => state.quantity.cartItems);
+
+  const cartItemsList = cartItems.map(item => {
+    return (
+      <div className="item">
+        <p>{item.name} - {item.quantity}</p>
+      </div>
+    )
+  })
 
   return (
     <header>
@@ -13,6 +22,9 @@ function Header() {
       <div className="cart">
         <h2>Cart</h2>
         <p>Total items in cart: {quantity}</p>
+      </div>
+      <div className="cart-items">
+        {cartItemsList}
       </div>
     </header>
   )

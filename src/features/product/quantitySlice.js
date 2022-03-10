@@ -3,15 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 export const quantitySlice = createSlice({
   name: 'quantity',
   initialState: {
-    value: 0,
+    cartQuantity: 0,
+    cartItems: []
   },
   reducers: {
-    increment: state => {
-      state.value += 1;
+    addProduct: (state, action) => {
+      state.cartQuantity += 1;
+      state.cartItems.push(action.payload);
     }
   }
 })
 
 
-export const { increment } = quantitySlice.actions;
+export const { addProduct } = quantitySlice.actions;
 export default quantitySlice.reducer;
