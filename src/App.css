@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+header {
+  background: navy;
+  color: whitesmoke;
+  padding: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.cart {
+  margin-left: auto;
+  text-align: left;
+}
+
+.products-list {
+  text-align: center;
+}
+
+.product {
+  width: 300px;
+  padding: 1em;
+  margin: 1em auto;
+  background: papayawhip;
+}
+
+button {
+  margin: 1em;
+}
